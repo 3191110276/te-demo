@@ -17,7 +17,7 @@ variable "secret_key" {
    description = "value for secret key"
 }
 
-variable "organization" {
+variable "org_name" {
    type = string
    description = "value for organization"
 }
@@ -33,6 +33,10 @@ provider "intersight" {
   endpoint = "https://intersight.com"
 }
 
+data "intersight_organization_organization" "myorg" {
+  name = var.org_name
+}
+
 resource "intersight_ntp_policy" "ntp" {
   name        = var.name
   description = "Demo Policy"
@@ -42,6 +46,6 @@ resource "intersight_ntp_policy" "ntp" {
   ]
   organization {
     object_type = "organization.Organization"
-    moid        = var.organization
+    moid        = data.intersight_organization_organization.myorg.results.0.moid
   }
 }
