@@ -26,6 +26,7 @@ variable "org_name" {
 variable "policy_name" {
    type = string
    description = "Name for the policy"
+   default = "UNDEFINED"
 }
 
 provider "intersight" {
