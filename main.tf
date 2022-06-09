@@ -22,7 +22,7 @@ variable "org_name" {
    description = "value for organization"
 }
 
-variable "organization" {
+variable "policy_name" {
    type = string
    description = "Name for the policy"
 }
@@ -38,7 +38,7 @@ data "intersight_organization_organization" "myorg" {
 }
 
 resource "intersight_ntp_policy" "ntp" {
-  name        = var.name
+  name        = var.policy_name
   description = "Demo Policy"
   enabled     = true
   ntp_servers = [
