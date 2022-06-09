@@ -20,6 +20,7 @@ variable "secret_key" {
 variable "org_name" {
    type = string
    description = "value for organization"
+   default = "default"
 }
 
 variable "policy_name" {
