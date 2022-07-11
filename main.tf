@@ -54,7 +54,7 @@ resource "intersight_ntp_policy" "ntp" {
 
 
 resource "intersight_workflow_workflow_info" "workflow_workflow_info2" {
-  name         = "workflow_workflow_info2"
+  name         = "workflow_workflow_info4"
   pause_reason = null
   action       = "Start"
   success_workflow_cleanup_duration = 2160
