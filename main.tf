@@ -51,3 +51,27 @@ resource "intersight_ntp_policy" "ntp" {
     moid        = data.intersight_organization_organization.myorg.results.0.moid
   }
 }
+
+
+resource "intersight_workflow_workflow_info" "workflow_workflow_info1" {
+  name         = "workflow_workflow_info1"
+  pause_reason = null
+  action       = "Create"
+  properties {
+    object_type     = "workflow.WorkflowInfoProperties"
+    retryable       = false
+    rollback_action = "Disabled"
+  }
+  success_workflow_cleanup_duration = 2160
+  wait_reason                       = null
+  workflow_meta_type                = "SystemDefined"
+  organization {
+    object_type = "organization.Organization"
+    moid        = data.intersight_organization_organization.myorg.results.0.moid
+  }
+  workflow_definition {
+    object_type = "workflow.WorkflowDefinition"
+    moid        = "62cb72a7696f6e2d314fa137"
+  }
+}
+
