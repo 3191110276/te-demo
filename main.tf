@@ -56,7 +56,7 @@ resource "intersight_ntp_policy" "ntp" {
 resource "intersight_workflow_workflow_info" "workflow_workflow_info1" {
   name         = "workflow_workflow_info1"
   pause_reason = null
-  action       = "Create"
+  action       = "Start"
   properties {
     object_type     = "workflow.WorkflowInfoProperties"
     retryable       = false
