@@ -70,7 +70,7 @@ resource "intersight_workflow_workflow_info" "workflow_workflow_info1" {
 }
 
 resource "intersight_workflow_workflow_info" "workflow_workflow_info1" {
-  name         = "workflow_workflow_info1"
+  name         = "workflow_workflow_info2"
   pause_reason = null
   action       = "Start"
   success_workflow_cleanup_duration = 2160
